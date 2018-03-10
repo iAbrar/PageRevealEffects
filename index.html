@@ -1,51 +1,43 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Page Reveal Effects | Codrops</title>
-		<meta name="description" content="Some inspiration for multi-layer page reveal effects" />
-		<meta name="keywords" content="overlay, reveal, effect, page transition, inspiration, javascript" />
-		<meta name="author" content="Codrops" />
-		<link rel="shortcut icon" href="favicon.ico">
-		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,600|Merriweather:400' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="css/select-css.css" />
-		<link rel="stylesheet" type="text/css" href="css/demo.css" />
-		<link rel="stylesheet" type="text/css" href="css/component.css" />
-		<script src="js/modernizr-custom.js"></script>
-	</head>
-	<body>
-		<!-- SVG symbol used for navigation arrows -->
-		<svg class="hidden">
-			<defs>
-				<symbol id="icon-arrow" viewBox="0 0 39 51.43">
-					<title>Build a Random Quote Machine</title>
-					<polygon points="7 25.71 36 45.71 36 26.08 36 5.71 7 25.71" stroke-miterlimit="10" stroke-width="6"/><line x1="3" y1="5.71" x2="3" y2="45.71" fill="none" stroke-miterlimit="10" stroke-width="6"/>
-				</symbol>
-			</defs>
-		</svg>
-		<main class="container">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Build a Random Quote Machine</title>
+	<meta name="description" content="Some inspiration for multi-layer page reveal effects" />
+	<meta name="keywords" content="overlay, reveal, effect, page transition, inspiration, javascript" />
+	<meta name="author" content="Codrops" />
+	<link rel="shortcut icon" href="favicon.ico">
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,600|Merriweather:400' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/select-css.css" />
+	<link rel="stylesheet" type="text/css" href="css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="css/component.css" />
+	<script src="js/modernizr-custom.js"></script>
+</head>
+<body>
 
-				<div class="page">
-					<blockquote class="quote">
-						<p>A good programmer is someone who always looks both ways before crossing a one-way street. </p>
-						<footer>Doug Linder</footer>
-					</blockquote>
-						<a class="btn btn-custom test" aria-label="Navigate bottom right">click me</a>
-				</div>
+	<main class="container">
+
+		<div class="page">
+			<blockquote class="quote">
+				<p>A good programmer is someone who always looks both ways before crossing a one-way street. </p>
+				<footer>Doug Linder</footer>
+			</blockquote>
+			<a class="btn btn-custom test" aria-label="Navigate bottom right">New quote</a>
+		</div>
 
 
-		</main>
-		<script src="js/classie.js"></script>
-		<script src="js/main.js"></script>
-		<script>
+	</main>
+	<script src="js/classie.js"></script>
+	<script src="js/main.js"></script>
+	<script>
 		(function() {
 			var pages = [].slice.call(document.querySelectorAll('.page')),
-				currentPage = 0,
+			currentPage = 0,
 
-				revealerOpts = {
+			revealerOpts = {
 					// the layers are the elements that move from the sides
 					nmbLayers : 3,
 					// bg color of each layer
@@ -63,18 +55,16 @@
 			// triggers the effect by calling instance.reveal(direction, callbackTime, callbackFn)
 			function reveal(direction) {
 				var callbackTime = 750,
-					callbackFn = function() {
-						classie.remove(pages[currentPage], 'page--current');
-						currentPage = currentPage === 0 ? 1 : 0;
-						classie.add(pages[currentPage], 'page--current');
-					};
+				callbackFn = function() {
+					classie.remove(pages[currentPage], 'page--current');
+					currentPage = currentPage === 0 ? 1 : 0;
+					classie.add(pages[currentPage], 'page--current');
+				};
 
 				revealer.reveal(direction, callbackTime, callbackFn);
 			}
 
-			// changing the effect..
-			var effectCtrl = document.getElementById('select-effect');
-			effectCtrl.addEventListener('change', changeEffect);
+
 			// force it to be the first opt as default
 			effectCtrl.value = 'effect-3';
 
@@ -102,6 +92,6 @@
 				revealer = new Revealer(revealerOpts);
 			}
 		})();
-		</script>
-	</body>
+	</script>
+</body>
 </html>

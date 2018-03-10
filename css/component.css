@@ -2,28 +2,29 @@ html,
 body {
 	min-height: 100vh;
 	overflow-x: hidden;
+	font-family: 'Merriweather', serif;
 }
 /* By Abrar */
 .btn {
-    padding: 10px 60px;
-    height: 45px;
-    width: fit-content;
-    align-self: center;
+	padding: 10px 60px;
+	height: fit-content;
+	width: fit-content;
+	align-self: center;
+	font-size: 1.5em;
 }
 
 .btn-custom{
-background-color: #fff;
-    color: #111;
-    border: 1px solid #111;
-    border-radius: 0px !important;
-    transition: all 0.4s ease-in-out;
-    margin-bottom: 20px;
- align-text:center;
+	background-color: #fff;
+	color: #444;
+	border-radius: 0px !important;
+	transition: all 0.4s ease-in-out;
+	margin-bottom: 20px;
+	align-text:center;
 }
 .btn-custom:hover{
-  color: #fff;
-  background-color: #a9ebda;
-  border:0;
+	color: #fff;
+	background-color: #444;
+	border:0;
 }
 
 /* End */
@@ -43,7 +44,7 @@ background-color: #fff;
 
 .page {
 	padding: 6.5em;
-	background: #66c6ff;
+	background: #4cabef;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -135,7 +136,7 @@ background-color: #fff;
 /* Page content */
 
 .quote {
-	font-size: 5.5vh;
+	font-size: 4vh;
 	line-height: 1.25;
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -144,7 +145,6 @@ background-color: #fff;
 	-webkit-box-direction: normal;
 	-ms-flex-direction: column;
 	flex-direction: column;
-	height: 100%;
 	margin: 0 auto;
 	max-width: 800px;
 	padding: 1em;
