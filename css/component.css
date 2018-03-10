@@ -3,7 +3,30 @@ body {
 	min-height: 100vh;
 	overflow-x: hidden;
 }
+/* By Abrar */
+.btn {
+    padding: 10px 60px;
+    height: 45px;
+    width: fit-content;
+    align-self: center;
+}
 
+.btn-custom{
+background-color: #fff;
+    color: #111;
+    border: 1px solid #111;
+    border-radius: 0px !important;
+    transition: all 0.4s ease-in-out;
+    margin-bottom: 20px;
+ align-text:center;
+}
+.btn-custom:hover{
+  color: #fff;
+  background-color: #a9ebda;
+  border:0;
+}
+
+/* End */
 .js .container {
 	position: relative;
 	height: 100vh;
@@ -36,7 +59,7 @@ body {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	visibility: hidden;
+
 	z-index: 1;
 }
 
@@ -60,49 +83,6 @@ body {
 
 .no-js .pagenav {
 	display: none;
-}
-
-.pagenav__button {
-	position: absolute;
-	border: 0;
-	background: none;
-	padding: 0;
-	margin: 0;
-	width: 2em;
-	height: 2em;
-	cursor: pointer;
-	pointer-events: auto;
-}
-
-.pagenav__button:focus {
-	outline: none;
-}
-
-.pagenav__button--top,
-.pagenav__button--bottom {
-	left: 50%;
-	margin: 0 0 0 -1em;
-}
-
-.pagenav__button--bottom,
-.pagenav__button--cornerbottomleft {
-	bottom: 0;
-}
-
-.pagenav__button--left,
-.pagenav__button--right {
-	top: 50%;
-	margin: -1em 0 0 0;
-}
-
-.pagenav__button--right,
-.pagenav__button--cornertopright,
-.pagenav__button--cornerbottomright {
-	right: 0;
-}
-
-.pagenav__button--cornerbottomright {
-	bottom: 0;
 }
 
 .icon {
