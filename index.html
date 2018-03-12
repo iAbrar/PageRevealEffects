@@ -16,6 +16,8 @@
 	<link rel="stylesheet" type="text/css" href="css/component.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="js/modernizr-custom.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
 </head>
 <body>
 
@@ -23,11 +25,11 @@
 
 		<div class="page">
 			<blockquote class="quote">
-				<p>A good programmer is someone who always looks both ways before crossing a one-way street. </p>
-				<footer>Doug Linder</footer>
+				<p id="quote">A good programmer is someone who always looks both ways before crossing a one-way street. </p>
+				<footer id="author">Doug Linder</footer>
 
 			</blockquote>
-			<a class="btn btn-custom test" aria-label="Navigate bottom right">New quote</a>
+			<a id="newQuoteButton" class="btn btn-custom test" aria-label="Navigate bottom right">New quote</a>
 
 		</div>
 
@@ -36,6 +38,9 @@
 	<script src="js/classie.js"></script>
 	<script src="js/main.js"></script>
 	<script>
+		// retreving the quote and the auther info
+
+		//end
 		(function() {
 			var pages = [].slice.call(document.querySelectorAll('.page')),
 			currentPage = 0,
@@ -53,47 +58,34 @@
 
 			// clicking the page nav buttons
 
-			document.querySelector('a.test').addEventListener('click', function() { reveal('cornerbottomright'); });
+			document.querySelector('a.test').addEventListener('click', function() { reveal('cornerbottomright');
+
+				var url ="http://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&jsonp=?&lang=en";
+  $.getJSON(url, function(json){
+             $("#quote").text(json.quoteText);
+             $("#author").text(json.quoteAuthor);
+});
+
+
+		});
 
 			// triggers the effect by calling instance.reveal(direction, callbackTime, callbackFn)
 			function reveal(direction) {
 				var callbackTime = 750,
 				callbackFn = function() {
-					classie.remove(pages[currentPage], 'page--current');
-					currentPage = currentPage === 0 ? 1 : 0;
-					classie.add(pages[currentPage], 'page--current');
+					//classie.remove(pages[currentPage], 'page--current');
+					//currentPage = currentPage === 0 ? 1 : 0;
+					//classie.add(pages[currentPage], 'page--current');
 				};
 
-				revealer.reveal(direction, callbackTime, callbackFn);
+				revealer.reveal(direction, callbackTime);
 			}
 
 
 			// force it to be the first opt as default
-			effectCtrl.value = 'effect-3';
+			//effectCtrl.value = 'effect-3';
 
-			function changeEffect() {
-				revealer.destroy();
-				var revealerOpts = {
-					// the layers are the elements that move from the sides
-					nmbLayers : Number(this.options[this.selectedIndex].getAttribute('data-layers')),
-					// bg color of each layer
-					bgcolor : this.options[this.selectedIndex].getAttribute('data-colors').split(','),
-					// effect classname
-					effect : 'anim--' + this.value,
-					onStart : function(direction) {
-						// next page gets class page--animate-[direction]
-						var nextPage = pages[currentPage === 0 ? 1 : 0];
-						classie.add(nextPage, 'page--animate-' + direction);
-					},
-					onEnd : function(direction) {
-						// remove class page--animate-[direction] from next page
-						var nextPage = pages[currentPage === 0 ? 1 : 0];
-						nextPage.className = 'page';
-					}
-				};
 
-				revealer = new Revealer(revealerOpts);
-			}
 		})();
 	</script>
 </body>
