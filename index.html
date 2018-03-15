@@ -7,8 +7,6 @@
 	<title>Build a Random Quote Machine</title>
 	<meta name="description" content="Some inspiration for multi-layer page reveal effects" />
 	<meta name="keywords" content="overlay, reveal, effect, page transition, inspiration, javascript" />
-	<meta name="author" content="Codrops" />
-	<link rel="shortcut icon" href="favicon.ico">
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,600|Merriweather:400' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="css/select-css.css" />
@@ -16,7 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="css/component.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="js/modernizr-custom.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 </head>
 <body>
@@ -29,7 +27,7 @@
 				<footer id="author">Doug Linder</footer>
 
 			</blockquote>
-			<a id="newQuoteButton" class="btn btn-custom test" aria-label="Navigate bottom right">New quote</a>
+			<button type="button" id="newQuoteButton" class="btn btn-custom" aria-label="Navigate bottom right">New quote</button>
 
 		</div>
 
@@ -58,18 +56,18 @@
 
 			// clicking the page nav buttons
 
-			document.querySelector('a.test').addEventListener('click', function() { reveal('cornerbottomright');
+			document.querySelector('#newQuoteButton').addEventListener('click', function() { reveal('cornerbottomright');
 
 				var url ="http://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&jsonp=?&lang=en";
-  $.getJSON(url, function(json){
-  	setTimeout(function(){
-             $("#quote").text(json.quoteText);
-             $("#author").text(json.quoteAuthor);
-         }, 1000);
-});
+				$.getJSON(url, function(json){
+					setTimeout(function(){
+						$("#quote").text(json.quoteText);
+						$("#author").text(json.quoteAuthor);
+					}, 1000);
+				});
 
 
-		});
+			});
 
 			// triggers the effect by calling instance.reveal(direction, callbackTime, callbackFn)
 			function reveal(direction) {
