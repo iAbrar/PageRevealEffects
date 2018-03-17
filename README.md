@@ -2,6 +2,9 @@
 
 this project is part from freeCodeCamp challenges. It is about how to fitch data from json and show them to the user. 
 
+## How to use 
+
+this is the demo of the project [click here](https://iabrar.github.io/Random-Quote-Machine/)
 
 ## License
 
