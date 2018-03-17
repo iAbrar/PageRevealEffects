@@ -4,7 +4,7 @@ this project is part from freeCodeCamp challenges. It is about how to fitch data
 
 ## How to use 
 
-this is the demo of the project [click here] ()
+this is the demo of the project [click here](https://iabrar.github.io/Random-Quote-Machine/)
 
 ## License
 
