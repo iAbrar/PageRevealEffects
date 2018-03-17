@@ -90,7 +90,8 @@
 
 			  $("#tweet").click(function(){
 			  	var text=document.getElementById("quote").innerHTML;
-        $(this).attr("href",'https://twitter.com/intent/tweet/?text='+ text);
+			  	var author =document.getElementById("author").innerHTML;
+        $(this).attr("href",'https://twitter.com/intent/tweet/?text='+ text +'-'+author);
     });
 	</script>
 </body>
