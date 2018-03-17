@@ -5,16 +5,22 @@ body {
 	font-family: 'Merriweather', serif;
 }
 /* By Abrar */
+span{
+margin:0 auto;
+}
+
+
 .btn{
-	padding: 10px 60px;
-	height: fit-content;
+	padding: 10px 20px;
+	height: auto;
 	width: fit-content;
-	align-self: center;
 	font-size: 1.5em;
+	display: inline;
+	margin-right: 10px;
+	border: #fff;
 }
 
 .btn-custom{
-	border-color: #fff;
 	outline: none;
 	background-color: #fff;
 	color: #444;
@@ -29,7 +35,6 @@ body {
 	background-color: #444;
 	border:0;
 }
-
 
 /* End */
 .js .container {

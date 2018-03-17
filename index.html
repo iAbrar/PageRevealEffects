@@ -27,15 +27,15 @@
 				<footer id="author">Doug Linder</footer>
 
 			</blockquote>
-			<button type="button" id="newQuoteButton" class="btn btn-custom" aria-label="Navigate bottom right">New quote</button>
+			<span>
+				<a id="tweet" href="https://twitter.com/intent/tweet?text=" target="_blank" class="btn btn-custom"><i class="fa fa-twitter"></i></a>
+				<input type="button" value="New Quote" name="" id="newQuoteButton" class="btn btn-custom">
+			</span>
+		</main>
+		<script src="js/classie.js"></script>
+		<script src="js/main.js"></script>
+		<script>
 
-		</div>
-
-
-	</main>
-	<script src="js/classie.js"></script>
-	<script src="js/main.js"></script>
-	<script>
 		// retreving the quote and the auther info
 
 		//end
@@ -87,6 +87,11 @@
 
 
 		})();
+
+			  $("#tweet").click(function(){
+			  	var text=document.getElementById("quote").innerHTML;
+        $(this).attr("href",'https://twitter.com/intent/tweet/?text='+ text);
+    });
 	</script>
 </body>
 </html>
